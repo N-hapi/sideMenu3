@@ -19,18 +19,30 @@ struct ContentView: View {
             }
         }
         ZStack(alignment: .leading) {
-            return GeometryReader { geometry in
-                ZStack(alignment: .leading) {
-                    MainView(showMenu: self.$showMenu)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
-                        .disabled(self.showMenu ? true : false)
-                    if self.showMenu {
-                        MenuView()
-                            .frame(width: geometry.size.width / 2)
-                            .transition(.move(edge: .leading))
+            return NavigationView {
+                GeometryReader { geometry in
+                    ZStack(alignment: .leading) {
+                        MainView(showMenu: self.$showMenu)
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
+                            .disabled(self.showMenu ? true : false)
+                        if self.showMenu {
+                            MenuView()
+                                .frame(width: geometry.size.width / 2)
+                                .transition(.move(edge: .leading))
+                        }
                     }
-                }
+                }.navigationBarTitle("Side Menu", displayMode: .inline)
+                    .navigationBarItems(leading: (
+                    Button(action: {
+                        withAnimation {
+                            self.showMenu.toggle()
+                        }
+                    }) {
+                        Image(systemName: "line.horizontal.3")
+                            .imageScale(.large)
+                    }
+                    ))
             }
         }
             .gesture(drag)
