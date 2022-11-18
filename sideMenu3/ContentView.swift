@@ -10,9 +10,16 @@ import SwiftUI
 struct ContentView: View {
     @State var showMenu = false
     var body: some View {
-        VStack {
-            let drag = DragGesture()
-             GeometryReader { geometry in
+
+        let drag = DragGesture().onEnded {
+            if $0.translation.width < -100 {
+                withAnimation {
+                    self.showMenu = false
+                }
+            }
+        }
+        ZStack(alignment: .leading) {
+            return GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     MainView(showMenu: self.$showMenu)
                         .frame(width: geometry.size.width, height: geometry.size.height)
@@ -26,13 +33,17 @@ struct ContentView: View {
                 }
             }
         }
-           // .padding()
+            .gesture(drag)
     }
+    // .padding()
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+
         ContentView()
+
     }
 }
 
