@@ -10,6 +10,7 @@ import SwiftUI
 struct MotherView: View {
     @State var currentPage: Page = .page1
     @State var showMenu = false
+    //@StateObject var viewRouter: ViewRouter
     var body: some View {
 
         let drag = DragGesture().onEnded {
@@ -20,10 +21,10 @@ struct MotherView: View {
             }
         }
         ZStack(alignment: .leading) {
-            return NavigationView {
+            NavigationView {
                 GeometryReader { geometry in
                     ZStack(alignment: .leading) {
-                        MainView(showMenu: self.$showMenu)
+                        MainView(showMenu: self.$showMenu, viewRouter: ViewRouter())
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
                             .disabled(self.showMenu ? true : false)
@@ -62,10 +63,11 @@ struct ContentView_Previews: PreviewProvider {
 
 struct MainView: View {
     @Binding var showMenu: Bool
-    @State var currentPage: Page = .page1
+    //@State var currentPage: Page = .page1
+    @StateObject var viewRouter: ViewRouter
     var body: some View {
        
-            switch currentPage {
+            switch viewRouter.currentPage {
             case .page1:
                 ContentViewA()
             case .page2:
@@ -74,7 +76,7 @@ struct MainView: View {
         withAnimation {
             Button(action: {
                 //self.showMenu = true
-                currentPage = .page2
+                viewRouter.currentPage = .page2
                 print("Open the side menu")
             }) {
                 Text("Show Menu")

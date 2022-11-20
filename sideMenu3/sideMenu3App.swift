@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct sideMenu3App: App {
+    @StateObject var viewRouter = ViewRouter()
     var body: some Scene {
         WindowGroup {
             MotherView()
