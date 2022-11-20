@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MotherView: View {
+    @State var currentPage: Page = .page1
     @State var showMenu = false
     var body: some View {
 
@@ -54,17 +55,26 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
 
-        ContentView()
+        MotherView()
 
     }
 }
 
 struct MainView: View {
     @Binding var showMenu: Bool
+    @State var currentPage: Page = .page1
     var body: some View {
+       
+            switch currentPage {
+            case .page1:
+                ContentViewA()
+            case .page2:
+                ContentViewB()
+            }
         withAnimation {
             Button(action: {
-                self.showMenu = true
+                //self.showMenu = true
+                currentPage = .page2
                 print("Open the side menu")
             }) {
                 Text("Show Menu")
