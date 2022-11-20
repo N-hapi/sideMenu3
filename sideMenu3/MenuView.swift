@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
+    @StateObject var viewRouter: ViewRouter
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -43,12 +44,32 @@ struct MenuView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color(red: 32 / 255, green: 32 / 255, blue: 32 / 255))
             .edgesIgnoringSafeArea(.all)
+        
+       
+        
+           
+                switch viewRouter.currentPage {
+                case .page1:
+                    ContentViewA()
+                case .page2:
+                    ContentViewB()
+                }
+            withAnimation {
+                Button(action: {
+                    //self.showMenu = true
+                    viewRouter.currentPage = .page2
+                    print("Open the side menu")
+                }) {
+                    Text("Show Menu")
+                }
+            }
+        
     }
 }
 
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView(viewRouter: ViewRouter())
     }
 }

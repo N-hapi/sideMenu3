@@ -29,7 +29,7 @@ struct MotherView: View {
                             .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
                             .disabled(self.showMenu ? true : false)
                         if self.showMenu {
-                            MenuView()
+                            MenuView(viewRouter: ViewRouter())
                                 .frame(width: geometry.size.width / 2)
                                 .transition(.move(edge: .leading))
                         }
