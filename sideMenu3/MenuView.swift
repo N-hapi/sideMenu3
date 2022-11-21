@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MenuView: View {
+    @Binding var showMenu: Bool
     @StateObject var viewRouter: ViewRouter
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -57,6 +59,7 @@ struct MenuView: View {
             withAnimation {
                 Button(action: {
                     //self.showMenu = true
+                    showMenu.toggle()
                     viewRouter.currentPage = .page2
                     print("Open the side menu")
                 }) {
@@ -69,7 +72,8 @@ struct MenuView: View {
 
 
 struct MenuView_Previews: PreviewProvider {
+    @State static var showMenu = false
     static var previews: some View {
-        MenuView(viewRouter: ViewRouter())
+        MenuView(showMenu: self.$showMenu, viewRouter: ViewRouter())
     }
 }

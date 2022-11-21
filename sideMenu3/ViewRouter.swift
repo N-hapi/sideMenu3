@@ -10,6 +10,8 @@ import SwiftUI
 class ViewRouter: ObservableObject {
     
     @Published var currentPage: Page = .page1
+    @Published var showMenu = false
+    
     
     
 }
