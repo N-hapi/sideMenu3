@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MotherView: View {
-    @State var currentPage: Page = .page1
+    //@State var currentPage: Page = .page1
     @State var showMenu = false
-    //@StateObject var viewRouter: ViewRouter
+    @StateObject var viewRouter: ViewRouter
     var body: some View {
 
         let drag = DragGesture().onEnded {
@@ -24,12 +24,12 @@ struct MotherView: View {
             NavigationView {
                 GeometryReader { geometry in
                     ZStack(alignment: .leading) {
-                        MainView(showMenu: self.$showMenu, viewRouter: ViewRouter())
+                        MainView(showMenu: self.$showMenu, viewRouter: viewRouter)
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
                             .disabled(self.showMenu ? true : false)
                         if self.showMenu {
-                            MenuView(showMenu: self.$showMenu, viewRouter: ViewRouter())
+                            MenuView(showMenu: self.$showMenu, viewRouter: viewRouter)
                                 .frame(width: geometry.size.width / 2)
                                 .transition(.move(edge: .leading))
                         }
@@ -54,9 +54,10 @@ struct MotherView: View {
 
 
 struct ContentView_Previews: PreviewProvider {
+    @StateObject var viewRouter: ViewRouter
     static var previews: some View {
 
-        MotherView()
+        MotherView(viewRouter: ViewRouter())
 
     }
 }
