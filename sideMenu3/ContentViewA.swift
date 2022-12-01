@@ -13,6 +13,16 @@ struct ContentViewA: View {
         VStack{
             HStack {
                 Text("helllllllo").padding()
+              
+                    .padding()
+                HStack {
+                    Image(systemName: "envelope")
+                        .foregroundColor(.gray)
+                        .imageScale(.large)
+                    Text("Messages")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
             }
             Spacer()
             

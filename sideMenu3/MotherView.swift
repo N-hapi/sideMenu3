@@ -54,7 +54,7 @@ struct MotherView: View {
 
 
 struct ContentView_Previews: PreviewProvider {
-    @StateObject var viewRouter: ViewRouter
+    //@StateObject var viewRouter: ViewRouter
     static var previews: some View {
 
         MotherView(viewRouter: ViewRouter())
@@ -67,21 +67,21 @@ struct MainView: View {
     //@State var currentPage: Page = .page1
     @StateObject var viewRouter: ViewRouter
     var body: some View {
-       
-            switch viewRouter.currentPage {
-            case .page1:
-                ContentViewA()
-            case .page2:
-                ContentViewB()
-            }
-        withAnimation {
-            Button(action: {
-                //self.showMenu = true
-                viewRouter.currentPage = .page2
-                print("Open the side menu")
-            }) {
-                Text("Show Menu")
-            }
+
+        switch viewRouter.currentPage {
+        case .page1:
+            ContentViewA()
+        case .page2:
+            ContentViewB()
         }
+//        withAnimation {
+//            Button(action: {
+//                //self.showMenu = true
+//                viewRouter.currentPage = .page2
+//                print("Open the side menu")
+//            }) {
+//                Text("Show Menu")
+//            }
+        // }
     }
 }

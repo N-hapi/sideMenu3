@@ -50,12 +50,12 @@ struct MenuView: View {
        
         
            
-                switch viewRouter.currentPage {
-                case .page1:
-                    ContentViewA()
-                case .page2:
-                    ContentViewB()
-                }
+//                switch viewRouter.currentPage {
+//                case .page1:
+//                    ContentViewA()
+//                case .page2:
+//                    ContentViewB()
+//                }
             withAnimation {
                 Button(action: {
                     //self.showMenu = true

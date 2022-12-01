@@ -12,6 +12,14 @@ struct ContentViewB: View {
         VStack{
             HStack {
                 Text("jessss").padding()
+                HStack {
+                    Image(systemName: "person")
+                        .foregroundColor(.gray)
+                        .imageScale(.large)
+                    Text("Profile")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
             }
             Spacer()
             
