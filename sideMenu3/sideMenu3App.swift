@@ -13,8 +13,12 @@ struct sideMenu3App: App {
     @StateObject var viewRouter = ViewRouter()
     var body: some Scene {
         WindowGroup {
+            let context = persistenceController.container.viewContext
+            let dateHolder = DateHolder(context)
+            
             MotherView(viewRouter: viewRouter)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(dateHolder)
         }
     }
 }

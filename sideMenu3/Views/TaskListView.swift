@@ -10,6 +10,7 @@ import CoreData
 
 struct TaskListView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var dateHolder: DateHolder
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \TaskItem.dueDate, ascending: true)],
@@ -18,43 +19,41 @@ struct TaskListView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.dueDate!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.dueDate!, formatter: itemFormatter)
+            VStack {
+                ZStack {
+                    List {
+                        ForEach(items) { taskItem in
+                            NavigationLink(destination: TaskEditView(passedTaskItem: taskItem, initialDate: Date()).environmentObject(dateHolder)){
+                                Text("Item at \(taskItem.dueDate!, formatter: itemFormatter)")
+                            }
+                        }
+                        .onDelete(perform: deleteItems)
                     }
+                    .toolbar {
+        #if os(iOS)
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            EditButton()
+                        }
+        #endif
+                        
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                    FloatingButton().environmentObject(dateHolder)
                 }
-#endif
-                
             }
-        }
+        }.navigationTitle("TodoList")
         
     }
     
     
     
     
+
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
             
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            dateHolder.saveContext(viewContext)
         }
     }
     
