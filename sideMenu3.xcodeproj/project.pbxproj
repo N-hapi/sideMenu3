@@ -18,7 +18,7 @@
 		54B1F105292A7E14006DC6B4 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F104292A7E14006DC6B4 /* ViewRouter.swift */; };
 		54B1F14129390388006DC6B4 /* coredata2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F13F29390388006DC6B4 /* coredata2.xcdatamodeld */; };
 		54B1F169293CC067006DC6B4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F167293CC066006DC6B4 /* Persistence.swift */; };
-		54B1F16A293CC067006DC6B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F168293CC067006DC6B4 /* ContentView.swift */; };
+		54B1F16A293CC067006DC6B4 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F168293CC067006DC6B4 /* TaskListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +34,7 @@
 		54B1F104292A7E14006DC6B4 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		54B1F14029390388006DC6B4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		54B1F167293CC066006DC6B4 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		54B1F168293CC067006DC6B4 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		54B1F168293CC067006DC6B4 /* TaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 		54B1F14629393DBC006DC6B4 /* TToDoListItem */ = {
 			isa = PBXGroup;
 			children = (
-				54B1F168293CC067006DC6B4 /* ContentView.swift */,
+				54B1F168293CC067006DC6B4 /* TaskListView.swift */,
 				54B1F167293CC066006DC6B4 /* Persistence.swift */,
 			);
 			path = TToDoListItem;
@@ -171,7 +171,7 @@
 			files = (
 				54B1F169293CC067006DC6B4 /* Persistence.swift in Sources */,
 				54B1F0E4292562B9006DC6B4 /* MotherView.swift in Sources */,
-				54B1F16A293CC067006DC6B4 /* ContentView.swift in Sources */,
+				54B1F16A293CC067006DC6B4 /* TaskListView.swift in Sources */,
 				54B1F105292A7E14006DC6B4 /* ViewRouter.swift in Sources */,
 				54B1F0F2292564B9006DC6B4 /* MenuView.swift in Sources */,
 				54B1F14129390388006DC6B4 /* coredata2.xcdatamodeld in Sources */,

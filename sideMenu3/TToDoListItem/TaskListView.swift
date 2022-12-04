@@ -8,13 +8,13 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct TaskListView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \TaskItem.dueDate, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var items: FetchedResults<TaskItem>
 
     var body: some View {
         NavigationView {
@@ -85,6 +85,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        TaskListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
