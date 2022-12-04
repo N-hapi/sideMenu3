@@ -53,7 +53,7 @@ struct MotherView: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct MotherView_Previews: PreviewProvider {
     //@StateObject var viewRouter: ViewRouter
     static var previews: some View {
 
@@ -70,7 +70,11 @@ struct MainView: View {
 
         switch viewRouter.currentPage {
         case .page1:
+            ContentView()
             ContentViewA()
+            Spacer()
+        //ContentView()
+            
         case .page2:
             ContentViewB()
         }
