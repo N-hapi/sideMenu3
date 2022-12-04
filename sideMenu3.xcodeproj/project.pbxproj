@@ -22,6 +22,7 @@
 		54B1F196293CDB70006DC6B4 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F195293CDB70006DC6B4 /* FloatingButton.swift */; };
 		54B1F198293CDC2B006DC6B4 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F197293CDC2B006DC6B4 /* TaskEditView.swift */; };
 		54B1F19B293D0321006DC6B4 /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F19A293D0321006DC6B4 /* DateHolder.swift */; };
+		54B1F19D293D0B14006DC6B4 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F19C293D0B14006DC6B4 /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		54B1F195293CDB70006DC6B4 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		54B1F197293CDC2B006DC6B4 /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
 		54B1F19A293D0321006DC6B4 /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
+		54B1F19C293D0B14006DC6B4 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				54B1F168293CC067006DC6B4 /* TaskListView.swift */,
+				54B1F19C293D0B14006DC6B4 /* TaskCell.swift */,
 				54B1F19A293D0321006DC6B4 /* DateHolder.swift */,
 				54B1F197293CDC2B006DC6B4 /* TaskEditView.swift */,
 				54B1F0E3292562B9006DC6B4 /* MotherView.swift */,
@@ -194,6 +197,7 @@
 				54B1F0F2292564B9006DC6B4 /* MenuView.swift in Sources */,
 				54B1F14129390388006DC6B4 /* coredata2.xcdatamodeld in Sources */,
 				54B1F101292A7C41006DC6B4 /* ContentViewA.swift in Sources */,
+				54B1F19D293D0B14006DC6B4 /* TaskCell.swift in Sources */,
 				54B1F0FF292A7BA0006DC6B4 /* Helper.swift in Sources */,
 				54B1F0E2292562B9006DC6B4 /* sideMenu3App.swift in Sources */,
 				54B1F198293CDC2B006DC6B4 /* TaskEditView.swift in Sources */,

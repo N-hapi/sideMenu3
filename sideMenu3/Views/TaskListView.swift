@@ -24,7 +24,8 @@ struct TaskListView: View {
                     List {
                         ForEach(items) { taskItem in
                             NavigationLink(destination: TaskEditView(passedTaskItem: taskItem, initialDate: Date()).environmentObject(dateHolder)){
-                                Text("Item at \(taskItem.dueDate!, formatter: itemFormatter)")
+                                //Text("Item at \(taskItem.dueDate!, formatter: itemFormatter)")
+                                TaskCell(passedTaskItem: taskItem).environmentObject(dateHolder)
                             }
                         }
                         .onDelete(perform: deleteItems)
