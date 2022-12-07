@@ -70,6 +70,7 @@ struct MainView: View {
 
         switch viewRouter.currentPage {
         case .page1:
+            ContentView2()
             ContentViewA()
         case .page2:
             ContentViewB()

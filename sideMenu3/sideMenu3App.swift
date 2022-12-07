@@ -12,7 +12,7 @@ struct sideMenu3App: App {
     @StateObject var viewRouter = ViewRouter()
     var body: some Scene {
         WindowGroup {
-            MotherView(viewRouter: viewRouter)
+            MotherView(viewRouter: viewRouter).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		545706D9293FE0EC0070F8EF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 545706D7293FE0EC0070F8EF /* Model.xcdatamodeld */; };
+		545706FC29411E420070F8EF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545706FA29411E420070F8EF /* Persistence.swift */; };
+		545706FD29411E420070F8EF /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545706FB29411E420070F8EF /* ContentView2.swift */; };
 		54B1F0E2292562B9006DC6B4 /* sideMenu3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F0E1292562B9006DC6B4 /* sideMenu3App.swift */; };
 		54B1F0E4292562B9006DC6B4 /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B1F0E3292562B9006DC6B4 /* MotherView.swift */; };
 		54B1F0E6292562BB006DC6B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B1F0E5292562BB006DC6B4 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		545706D8293FE0EC0070F8EF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		545706FA29411E420070F8EF /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		545706FB29411E420070F8EF /* ContentView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		54B1F0DE292562B9006DC6B4 /* sideMenu3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sideMenu3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B1F0E1292562B9006DC6B4 /* sideMenu3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenu3App.swift; sourceTree = "<group>"; };
 		54B1F0E3292562B9006DC6B4 /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
@@ -45,6 +51,7 @@
 		54B1F0D5292562B9006DC6B4 = {
 			isa = PBXGroup;
 			children = (
+				545706D7293FE0EC0070F8EF /* Model.xcdatamodeld */,
 				54B1F0E0292562B9006DC6B4 /* sideMenu3 */,
 				54B1F0DF292562B9006DC6B4 /* Products */,
 			);
@@ -68,6 +75,8 @@
 				54B1F100292A7C41006DC6B4 /* ContentViewA.swift */,
 				54B1F0FE292A7BA0006DC6B4 /* Helper.swift */,
 				54B1F0F1292564B9006DC6B4 /* MenuView.swift */,
+				545706FB29411E420070F8EF /* ContentView2.swift */,
+				545706FA29411E420070F8EF /* Persistence.swift */,
 				54B1F0E5292562BB006DC6B4 /* Assets.xcassets */,
 				54B1F0E7292562BB006DC6B4 /* Preview Content */,
 			);
@@ -152,10 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545706FC29411E420070F8EF /* Persistence.swift in Sources */,
 				54B1F0E4292562B9006DC6B4 /* MotherView.swift in Sources */,
 				54B1F105292A7E14006DC6B4 /* ViewRouter.swift in Sources */,
 				54B1F0F2292564B9006DC6B4 /* MenuView.swift in Sources */,
+				545706D9293FE0EC0070F8EF /* Model.xcdatamodeld in Sources */,
 				54B1F101292A7C41006DC6B4 /* ContentViewA.swift in Sources */,
+				545706FD29411E420070F8EF /* ContentView2.swift in Sources */,
 				54B1F0FF292A7BA0006DC6B4 /* Helper.swift in Sources */,
 				54B1F0E2292562B9006DC6B4 /* sideMenu3App.swift in Sources */,
 				54B1F103292A7C57006DC6B4 /* ContentViewB.swift in Sources */,
@@ -359,6 +371,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		545706D7293FE0EC0070F8EF /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				545706D8293FE0EC0070F8EF /* Model.xcdatamodel */,
+			);
+			currentVersion = 545706D8293FE0EC0070F8EF /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 54B1F0D6292562B9006DC6B4 /* Project object */;
 }
